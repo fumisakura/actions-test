@@ -1,0 +1,20 @@
+name: Hello # Start Exercise build-applications-w-GHCP-agent-mode
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello:
+    name: Hello World
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, World!"
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - run: |
+          git log -1
+          tree -a .
