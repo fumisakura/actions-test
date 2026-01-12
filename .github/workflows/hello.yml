@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello, World!"
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: main
       - run: |
