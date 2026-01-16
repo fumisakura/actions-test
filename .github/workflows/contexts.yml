@@ -1,0 +1,7 @@
+name: Contexts # Start Exercise build-applications-w-GHCP-agent-mode
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ github.actor }}" 
