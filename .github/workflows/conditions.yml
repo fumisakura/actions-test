@@ -1,0 +1,8 @@
+name: Conditions # Start Exercise build-applications-w-GHCP-agent-mode
+on: push
+jobs:
+  ski--or-run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is conditions run id " 
+        if: ${{ contains(github.run_id, '1') }}
