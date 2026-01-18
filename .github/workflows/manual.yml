@@ -13,3 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "${{ inputs.greeting }}"
+
+# If you want to run this workflow in local cli,
+# use the following command:
+# gh workflow run manual.yml -f greeting=goodbye
