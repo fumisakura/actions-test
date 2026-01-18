@@ -1,0 +1,14 @@
+name: Comments # Start test for comments
+run-name: Run by @${{ github.actor }}
+on: push
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - run: gh pr comment "${GITHUB_HEAD_REF}" --body "Test Comment from @${{ github.actor }} in run ${{ github.run_id }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
