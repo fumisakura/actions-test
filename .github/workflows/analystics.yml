@@ -1,7 +1,7 @@
 name: Static analysis
-on: push
-paths:
-  - 'actions-test/**/workflows/*.yml'
+on:
+  push:
+    paths: ['.github/workflows/*.yml']
 defaults:
   run:
     shell: bash
