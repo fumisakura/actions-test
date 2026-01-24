@@ -10,7 +10,7 @@ jobs:
       - run: echo "${{ github.actor }}" 
       - run: echo "${{ github.run_id }}" 
       - run: echo "${{ github.repository_owner }}"
-      - run: echo "${{ github.event.pull_request.title }}"
+#      - run: echo "${{ github.event.pull_request.title }}"
       - uses: actions/checkout@v4
         with:
           ref: ${{ env.BRANCH }}
