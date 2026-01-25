@@ -12,4 +12,4 @@ jobs:
             restore-keys: |
               test-${{ runner.os }}-
       - run: echo "This is cache run id "
-      - run: ls -la ${{ github.workspace }}/dummy
+      - run: ls -la "${GITHUB_WORKSPACE}/dummy"
