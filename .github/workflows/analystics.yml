@@ -16,3 +16,8 @@ jobs:
         - uses: actions/checkout@v4
         - run: |
             docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhysd/actionlint:latest
+            echo "::group:: Start logging Group"
+            set -x
+            date
+            hostname
+            echo "::endgroup:: End logging Group"

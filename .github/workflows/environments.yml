@@ -1,0 +1,24 @@
+name: Environments
+on:
+  workflow_dispatch:
+    inputs:
+      environment-name:
+        type: choice
+        default: dev
+        required: false
+        options:
+          - dev
+          - staging
+          - production
+jobs:
+  print:
+    environment: ${{ github.event.inputs.environment-name }}
+    runs-on: ubuntu-latest
+    env:
+        NAME: "${{ vars.NAME}}"
+        PASS: "${{ secrets.PASS}}"
+    steps:
+      - run: |
+          echo "Environment: ${{ github.event.inputs.environment-name }}"
+          echo "Name: $NAME"
+          echo "Pass: $PASS"
