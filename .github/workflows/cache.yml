@@ -12,4 +12,8 @@ jobs:
             restore-keys: |
               test-${{ runner.os }}-
       - run: echo "This is cache run id "
+      - run: |
+            if [[ -f "${GITHUB_WORKSPACE}/dummy" ]]; then mkdir "${GITHUB_WORKSPACE}/dummy"; fi
+            dd if=/dev/urandom of "${GITHUB_WORKSPACE}/dummy/" bs=1K count=10
+            sleep 10
       - run: ls -la "${GITHUB_WORKSPACE}/dummy"
